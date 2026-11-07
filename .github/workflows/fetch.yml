@@ -1,0 +1,34 @@
+name: Copy Louis Tyler's zips from Google Drive once
+on:
+  push:
+    branches: [claude/project-thread-8ogvfd]
+    paths: ['.github/workflows/fetch.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - run: pip install -q gdown
+      - env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          R=${{ github.repository }}
+          gh release view staging -R $R >/dev/null 2>&1 || gh release create staging -R $R --title staging --notes "Working copies of the source zips, split into parts. Not for the app."
+          have=$(gh release view staging -R $R --json assets -q '.assets[].name')
+          for id in 1fTfOhz9w1V6FrYTXcee0E5b6RaNANrKr 1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07 1vvuv5xWXrJUCk1KNxU40-JP6IDy7jNPg 1XcUsyp2P6aad9zeuTg6smG5Zipup5hQB 1J0fPRYaZ5uhZnGBxJEQDO3zpe3tnDGEZ; do
+            if echo "$have" | grep -q "^$id.zip.done$"; then echo "have $id"; continue; fi
+            ok=
+            for wait in 0 60 300 900 1800; do
+              sleep $wait
+              rm -f a.zip
+              if gdown -q "$id" -O a.zip && unzip -tq a.zip >/dev/null; then ok=1; break; fi
+              echo "retry $id after $wait"
+            done
+            [ -n "$ok" ] || { echo "FAILED $id"; continue; }
+            split -b 1900M -d a.zip "$id.zip.part"
+            gh release upload staging -R $R $id.zip.part* --clobber
+            touch $id.zip.done && gh release upload staging -R $R $id.zip.done --clobber
+            rm -f a.zip $id.zip.part*
+          done
