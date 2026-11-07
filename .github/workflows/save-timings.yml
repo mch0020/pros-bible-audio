@@ -1,0 +1,23 @@
+name: Save timings from the first run
+on:
+  push:
+    branches: [claude/project-thread-8ogvfd]
+    paths: ['.github/workflows/save-timings.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: '${{ github.ref_name }}' }
+      - env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          gh run download 42358544842 -R ${{ github.repository }} -p 't-*' -D dl0
+          mkdir -p timings
+          for d in dl0/*/; do cp -r "$d"* timings/; done
+          ls -R timings
+          git config user.name "github-actions[bot]"
+          git config user.email "41898732+github-actions[bot]@users.noreply.github.com"
+          git add timings && git commit -m "Verse timings (Joshua, 1 Samuel, 2 Kings, 2 Chronicles, Ezekiel, Twelve Prophets)" && git push origin HEAD:${{ github.ref_name }}
