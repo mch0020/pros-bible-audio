@@ -1,0 +1,242 @@
+[
+{
+"name": "ot-00",
+"corpus": "ot",
+"zip": "1fTfOhz9w1V6FrYTXcee0E5b6RaNANrKr",
+"books": "Genesis"
+},
+{
+"name": "ot-01",
+"corpus": "ot",
+"zip": "1fTfOhz9w1V6FrYTXcee0E5b6RaNANrKr",
+"books": "Exodus"
+},
+{
+"name": "ot-02",
+"corpus": "ot",
+"zip": "1fTfOhz9w1V6FrYTXcee0E5b6RaNANrKr",
+"books": "Leviticus"
+},
+{
+"name": "ot-03",
+"corpus": "ot",
+"zip": "1fTfOhz9w1V6FrYTXcee0E5b6RaNANrKr",
+"books": "Numbers"
+},
+{
+"name": "ot-04",
+"corpus": "ot",
+"zip": "1fTfOhz9w1V6FrYTXcee0E5b6RaNANrKr",
+"books": "Deuteronomy"
+},
+{
+"name": "ot-05",
+"corpus": "ot",
+"zip": "1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07",
+"books": "Joshua"
+},
+{
+"name": "ot-06",
+"corpus": "ot",
+"zip": "1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07",
+"books": "Judges"
+},
+{
+"name": "ot-07",
+"corpus": "ot",
+"zip": "1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07",
+"books": "1 Samuel"
+},
+{
+"name": "ot-08",
+"corpus": "ot",
+"zip": "1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07",
+"books": "2 Samuel"
+},
+{
+"name": "ot-09",
+"corpus": "ot",
+"zip": "1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07",
+"books": "1 Kings"
+},
+{
+"name": "ot-10",
+"corpus": "ot",
+"zip": "1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07",
+"books": "2 Kings"
+},
+{
+"name": "ot-11",
+"corpus": "ot",
+"zip": "1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07",
+"books": "Isaiah"
+},
+{
+"name": "ot-12",
+"corpus": "ot",
+"zip": "1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07",
+"books": "Jeremiah"
+},
+{
+"name": "ot-13",
+"corpus": "ot",
+"zip": "1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07",
+"books": "Ezekiel"
+},
+{
+"name": "ot-14",
+"corpus": "ot",
+"zip": "1Mge0cF3YSe4bOXJtvT9BUWHhMoVB1D07",
+"books": "Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi"
+},
+{
+"name": "ot-15",
+"corpus": "ot",
+"zip": "1vvuv5xWXrJUCk1KNxU40-JP6IDy7jNPg",
+"books": "Ruth|1 Chronicles"
+},
+{
+"name": "ot-16",
+"corpus": "ot",
+"zip": "1vvuv5xWXrJUCk1KNxU40-JP6IDy7jNPg",
+"books": "2 Chronicles"
+},
+{
+"name": "ot-17",
+"corpus": "ot",
+"zip": "1vvuv5xWXrJUCk1KNxU40-JP6IDy7jNPg",
+"books": "Ezra|Nehemiah|Esther"
+},
+{
+"name": "ot-18",
+"corpus": "ot",
+"zip": "1vvuv5xWXrJUCk1KNxU40-JP6IDy7jNPg",
+"books": "Job"
+},
+{
+"name": "ot-19",
+"corpus": "ot",
+"zip": "1vvuv5xWXrJUCk1KNxU40-JP6IDy7jNPg",
+"books": "Psalms"
+},
+{
+"name": "ot-20",
+"corpus": "ot",
+"zip": "1vvuv5xWXrJUCk1KNxU40-JP6IDy7jNPg",
+"books": "Proverbs"
+},
+{
+"name": "ot-21",
+"corpus": "ot",
+"zip": "1vvuv5xWXrJUCk1KNxU40-JP6IDy7jNPg",
+"books": "Ecclesiastes|Song of Solomon|Lamentations|Daniel"
+},
+{
+"name": "tr-22",
+"corpus": "tr",
+"zip": "1XcUsyp2P6aad9zeuTg6smG5Zipup5hQB",
+"books": "Matthew"
+},
+{
+"name": "tr-23",
+"corpus": "tr",
+"zip": "1XcUsyp2P6aad9zeuTg6smG5Zipup5hQB",
+"books": "Mark"
+},
+{
+"name": "tr-24",
+"corpus": "tr",
+"zip": "1XcUsyp2P6aad9zeuTg6smG5Zipup5hQB",
+"books": "Luke"
+},
+{
+"name": "tr-25",
+"corpus": "tr",
+"zip": "1XcUsyp2P6aad9zeuTg6smG5Zipup5hQB",
+"books": "John"
+},
+{
+"name": "tr-26",
+"corpus": "tr",
+"zip": "1XcUsyp2P6aad9zeuTg6smG5Zipup5hQB",
+"books": "Acts"
+},
+{
+"name": "tr-27",
+"corpus": "tr",
+"zip": "1XcUsyp2P6aad9zeuTg6smG5Zipup5hQB",
+"books": "Romans|1 Corinthians"
+},
+{
+"name": "tr-28",
+"corpus": "tr",
+"zip": "1XcUsyp2P6aad9zeuTg6smG5Zipup5hQB",
+"books": "2 Corinthians|Galatians|Ephesians|Philippians|Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy"
+},
+{
+"name": "tr-29",
+"corpus": "tr",
+"zip": "1XcUsyp2P6aad9zeuTg6smG5Zipup5hQB",
+"books": "Titus|Philemon|Hebrews|James|1 Peter|2 Peter|1 John|2 John|3 John|Jude"
+},
+{
+"name": "tr-30",
+"corpus": "tr",
+"zip": "1XcUsyp2P6aad9zeuTg6smG5Zipup5hQB",
+"books": "Revelation"
+},
+{
+"name": "wh-31",
+"corpus": "wh",
+"zip": "1J0fPRYaZ5uhZnGBxJEQDO3zpe3tnDGEZ",
+"books": "Matthew"
+},
+{
+"name": "wh-32",
+"corpus": "wh",
+"zip": "1J0fPRYaZ5uhZnGBxJEQDO3zpe3tnDGEZ",
+"books": "Mark"
+},
+{
+"name": "wh-33",
+"corpus": "wh",
+"zip": "1J0fPRYaZ5uhZnGBxJEQDO3zpe3tnDGEZ",
+"books": "Luke"
+},
+{
+"name": "wh-34",
+"corpus": "wh",
+"zip": "1J0fPRYaZ5uhZnGBxJEQDO3zpe3tnDGEZ",
+"books": "John"
+},
+{
+"name": "wh-35",
+"corpus": "wh",
+"zip": "1J0fPRYaZ5uhZnGBxJEQDO3zpe3tnDGEZ",
+"books": "Acts"
+},
+{
+"name": "wh-36",
+"corpus": "wh",
+"zip": "1J0fPRYaZ5uhZnGBxJEQDO3zpe3tnDGEZ",
+"books": "Romans|1 Corinthians"
+},
+{
+"name": "wh-37",
+"corpus": "wh",
+"zip": "1J0fPRYaZ5uhZnGBxJEQDO3zpe3tnDGEZ",
+"books": "2 Corinthians|Galatians|Ephesians|Philippians|Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy"
+},
+{
+"name": "wh-38",
+"corpus": "wh",
+"zip": "1J0fPRYaZ5uhZnGBxJEQDO3zpe3tnDGEZ",
+"books": "Titus|Philemon|Hebrews|James|1 Peter|2 Peter|1 John|2 John|3 John|Jude"
+},
+{
+"name": "wh-39",
+"corpus": "wh",
+"zip": "1J0fPRYaZ5uhZnGBxJEQDO3zpe3tnDGEZ",
+"books": "Revelation"
+}
+]

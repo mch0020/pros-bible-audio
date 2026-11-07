@@ -1,0 +1,54 @@
+name: Verse timings for Louis Tyler's readings
+on:
+  push:
+    branches: [claude/project-thread-8ogvfd]
+    paths: ['jobs.json', '.github/workflows/align.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs: { jobs: '${{ steps.j.outputs.jobs }}' }
+    steps:
+      - uses: actions/checkout@v4
+      - id: j
+        run: echo "jobs=$(jq -c . jobs.json)" >> $GITHUB_OUTPUT
+      - env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          for t in tyler-ot tyler-tr tyler-wh; do
+            gh release view $t -R ${{ github.repository }} >/dev/null 2>&1 || gh release create $t -R ${{ github.repository }} --title "$t" --notes "Louis Tyler's readings (hebgkaudiobible.com), used with his permission. One file per chapter, mono 48 kbps."
+          done
+  align:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: { job: '${{ fromJson(needs.plan.outputs.jobs) }}' }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: sudo apt-get install -y ffmpeg >/dev/null && pip install -q gdown torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
+      - run: mkdir -p /tmp/z && cd /tmp/z && gdown -q "${{ matrix.job.zip }}" -O a.zip && unzip -q a.zip && rm a.zip
+      - run: python tools/align_book.py ${{ matrix.job.corpus }} /tmp/z out "${{ matrix.job.books }}"
+      - env: { GH_TOKEN: '${{ github.token }}' }
+        run: ls out/*.mp3 >/dev/null 2>&1 && gh release upload tyler-${{ matrix.job.corpus }} out/*.mp3 --clobber -R ${{ github.repository }} || echo "no mp3"
+      - run: mkdir -p t/${{ matrix.job.corpus }} && cp out/*.json t/${{ matrix.job.corpus }}/ || true
+      - uses: actions/upload-artifact@v4
+        with: { name: 't-${{ matrix.job.name }}', path: t, retention-days: 30 }
+  collect:
+    needs: align
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { path: dl, pattern: 't-*', merge-multiple: true }
+      - run: |
+          mkdir -p timings && cp -r dl/* timings/ 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898732+github-actions[bot]@users.noreply.github.com"
+          git add timings && git commit -m "Verse timings" && git push || echo nothing
