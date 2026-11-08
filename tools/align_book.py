@@ -8,7 +8,7 @@ H = os.path.dirname(os.path.abspath(__file__))
 T = json.load(open(f'{H}/../texts/{corpus}.json'))
 NT = ['Matthew','Mark','Luke','John','Acts','Romans','1 Corinthians','2 Corinthians','Galatians','Ephesians','Philippians','Colossians',
       '1 Thessalonians','2 Thessalonians','1 Timothy','2 Timothy','Titus','Philemon','Hebrews','James','1 Peter','2 Peter','1 John','2 John','3 John','Jude','Revelation']
-ALIAS = {'song of songs': 'Song of Solomon', 'canticles': 'Song of Solomon', 'psalm': 'Psalms', 'qohelet': 'Ecclesiastes'}
+ALIAS = {'the song of solomon': 'Song of Solomon', 'song of songs': 'Song of Solomon', 'canticles': 'Song of Solomon', 'psalm': 'Psalms', 'qohelet': 'Ecclesiastes'}
 def book_of(folder):
     m = re.match(r'(\d+)\s+(.*)', folder)
     if corpus in ('tr', 'wh'): return NT[int(m.group(1)) - 1] if m else None
